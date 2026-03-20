@@ -1,0 +1,18 @@
+# 🧾 Receipt Tracker Bot — Dependencies
+
+# Telegram bot framework
+python-telegram-bot[job-queue]==21.7
+
+# Anthropic Claude API (~€1.50/year for Haiku text-only)
+anthropic>=0.39.0
+
+# OCR
+pytesseract>=0.3.10
+Pillow>=10.0.0
+imagehash>=4.3.1
+
+# PDF processing
+PyMuPDF>=1.24.0
+
+# Environment variables
+python-dotenv>=1.0.0
