@@ -1,0 +1,36 @@
+services:
+  data-init:
+    build: .
+    user: "0:0"
+    command: ["chown", "-R", "10001:10001", "/app/data"]
+    volumes:
+      - ./data:/app/data
+    network_mode: none
+    read_only: true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+    security_opt:
+      - no-new-privileges:true
+  bot:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+    volumes:
+      - ./data:/app/data
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=1g
+    pids_limit: 128
+    mem_limit: 4g

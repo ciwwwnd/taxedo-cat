@@ -1,18 +1,17 @@
-# 🧾 Receipt Tracker Bot — Dependencies
-
-# Telegram bot framework
 python-telegram-bot[job-queue]==21.7
 
-# Anthropic Claude API (~€1.50/year for Haiku text-only)
-anthropic>=0.39.0
+anthropic>=1.3,<2
 
-# OCR
 pytesseract>=0.3.10
 Pillow>=10.0.0
-imagehash>=4.3.1
-
-# PDF processing
 PyMuPDF>=1.24.0
 
-# Environment variables
 python-dotenv>=1.0.0
+
+fastembed==0.8.0
+numpy>=1.26.0
+markitdown[pdf,docx,xlsx,xls,pptx]==0.1.7
+
+spacy==3.8.16
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+de_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.8.0/de_core_news_sm-3.8.0-py3-none-any.whl

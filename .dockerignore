@@ -1,7 +1,12 @@
-venv/
-__pycache__/
-*.pyc
 .env
 data/
-*.db
-*.db.backup
+data-test/
+deploy-hetzner.sh
+
+.git/
+venv/
+.venv*/
+.model_cache/
+.pytest_cache/
+**/__pycache__/
+**/.DS_Store
